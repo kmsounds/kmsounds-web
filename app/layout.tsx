@@ -5,7 +5,7 @@ import SeoSchema from "@/components/SeoSchema";
 
 export const metadata: Metadata = {
   title: {
-    default: "K.M SOUNDS Hanwella | Pro Audio Equipment & Speaker Baffles Sri Lanka",
+    default: "K.M SOUNDS Hanwella | Pro Audio Solutions",
     template: "%s | K.M SOUNDS"
 
   },
