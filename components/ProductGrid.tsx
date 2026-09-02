@@ -98,10 +98,17 @@ export default function ProductGrid({
                   </button>
                 </div>
 
-                <div className="text-[9px] sm:text-[10px] font-bold text-cyan-400 bg-cyan-950/60 border border-cyan-800/50 px-1.5 sm:px-2 py-0.5 rounded w-max mb-1.5 sm:mb-2">
-                  {p.category} | {subCategoryName}
-                </div>
-                
+              <div className="text-[9px] sm:text-[10px] font-bold text-cyan-400 bg-cyan-950/60 border border-cyan-800/50 px-1.5 sm:px-2 py-0.5 rounded max-w-full truncate mb-1.5 sm:mb-2 inline-block">
+  {(() => {
+    const fullString = `${p.category || ''} | ${subCategoryName || ''}`;
+    const parts = fullString.split(/[/|]/).map((item) => item.trim()).filter(Boolean);
+    
+    if (parts.length > 2) {
+      return `${parts[0]} | ${parts[1]} ...`;
+    }
+    return fullString;
+  })()}
+</div>
                 <h3 className="font-bold text-white text-xs sm:text-base group-hover:text-cyan-400 transition-colors line-clamp-1">
                   {p.name}
                 </h3>
