@@ -28,19 +28,27 @@ import FlyingCartAnimation from "@/components/FlyingCartAnimation";
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
 
-
-const [isWelcomeOpen, setIsWelcomeOpen] = useState(false);
+  const [isWelcomeOpen, setIsWelcomeOpen] = useState(false);
   const [userName, setUserName] = useState("");
 
+  // Safe localStorage & Auth Check (Prevents older Chrome/Huawei Browser crash)
   useEffect(() => {
     const checkWelcome = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      const hasSeen = localStorage.getItem("hasSeenWelcome");
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        
+        let hasSeen = null;
+        if (typeof window !== "undefined" && window.localStorage) {
+          hasSeen = localStorage.getItem("hasSeenWelcome");
+        }
 
-      if (session?.user && !hasSeen) {
-        const name = session.user.user_metadata?.full_name || session.user.email?.split("@")[0];
-        setUserName(name || "Customer");
-        setIsWelcomeOpen(true);
+        if (session?.user && !hasSeen) {
+          const name = session.user.user_metadata?.full_name || session.user.email?.split("@")[0];
+          setUserName(name || "Customer");
+          setIsWelcomeOpen(true);
+        }
+      } catch (error) {
+        console.error("Welcome modal check error:", error);
       }
     };
 
@@ -48,11 +56,19 @@ const [isWelcomeOpen, setIsWelcomeOpen] = useState(false);
 
     const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
       if (event === "SIGNED_IN" && session?.user) {
-        const hasSeen = localStorage.getItem("hasSeenWelcome");
-        if (!hasSeen) {
-          const name = session.user.user_metadata?.full_name || session.user.email?.split("@")[0];
-          setUserName(name || "Customer");
-          setIsWelcomeOpen(true);
+        try {
+          let hasSeen = null;
+          if (typeof window !== "undefined" && window.localStorage) {
+            hasSeen = localStorage.getItem("hasSeenWelcome");
+          }
+
+          if (!hasSeen) {
+            const name = session.user.user_metadata?.full_name || session.user.email?.split("@")[0];
+            setUserName(name || "Customer");
+            setIsWelcomeOpen(true);
+          }
+        } catch (error) {
+          console.error("Auth state change error:", error);
         }
       }
     });
@@ -61,7 +77,6 @@ const [isWelcomeOpen, setIsWelcomeOpen] = useState(false);
       authListener.subscription.unsubscribe();
     };
   }, []);
-
 
   useEffect(() => {
     setIsMounted(true);
@@ -118,7 +133,7 @@ const [isWelcomeOpen, setIsWelcomeOpen] = useState(false);
   const [addedItemAnim, setAddedItemAnim] = useState<number | null>(null);
   const cartRef = useRef<HTMLButtonElement>(null);
 
-// Safe Filter Logic (Handles Search, Brand, Price and Categories)
+  // Safe Filter Logic with Normalized Search (Handles spaces, symbols, brand, price & categories)
   const filteredProducts = products.filter((product: any) => {
     const matchesCategory =
       !activeCategory ||
@@ -134,16 +149,22 @@ const [isWelcomeOpen, setIsWelcomeOpen] = useState(false);
         ? rawSub.includes(activeSubCategory)
         : rawSub === activeSubCategory);
 
-    // 1. Enhanced Search (Searches in Name, Title, Description, Category, and Brand)
-    const searchLower = searchQuery.toLowerCase().trim();
+    // Clean String Function (Spaces, Hyphens, Dashes Ignore කරලා සර්ච් කිරීමට)
+    const cleanStr = (str: string) =>
+      (str || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+
+    const searchClean = cleanStr(searchQuery);
+
+    // 1. Enhanced Normalized Search
     const matchesSearch =
       !searchQuery ||
-      (product.name || product.title || "").toLowerCase().includes(searchLower) ||
-      (product.description || "").toLowerCase().includes(searchLower) ||
-      (product.category || "").toLowerCase().includes(searchLower) ||
-      (product.brand || "").toLowerCase().includes(searchLower);
+      cleanStr(product.name).includes(searchClean) ||
+      cleanStr(product.title).includes(searchClean) ||
+      cleanStr(product.description).includes(searchClean) ||
+      cleanStr(product.category).includes(searchClean) ||
+      cleanStr(product.brand).includes(searchClean);
 
-    // 2. Flexible Brand Matching (Case-insensitive & Title Fallback)
+    // 2. Flexible Brand Matching
     const brandLower = selectedBrand.toLowerCase();
     const productBrandLower = (product.brand || "").toLowerCase();
     const productTitleLower = (product.name || product.title || "").toLowerCase();
@@ -308,23 +329,21 @@ const [isWelcomeOpen, setIsWelcomeOpen] = useState(false);
           <CustomOrderCalculator />
         </section>
 
-{/* Welcome Modal */}
-      <WelcomeModal
-        isOpen={isWelcomeOpen}
-        onClose={() => setIsWelcomeOpen(false)}
-        userName={userName}
-      />
+        {/* Welcome Modal */}
+        <WelcomeModal
+          isOpen={isWelcomeOpen}
+          onClose={() => setIsWelcomeOpen(false)}
+          userName={userName}
+        />
 
       </main>
 
-      
+      {/* Footer එකට උඩින් Contact Banner එක */}
+      <ContactBanner />
 
-          {/* Footer එකට උඩින් Contact Banner එක */}
-<ContactBanner />
+      <CalculatorBanner />
 
-<CalculatorBanner />
-
-<AboutBanner />
+      <AboutBanner />
 
       {/* Footer */}
       <Footer setActiveCategory={setActiveCategory} />
