@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Fallback standard colors for older Android/Huawei WebKit engines */
+/* 1. Global Reset & Base Styling */
 :root {
   --background: #0b0f19;
   --foreground: #f8fafc;
@@ -10,10 +10,22 @@ html, body {
   background-color: #0b0f19 !important;
   color: #f8fafc !important;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
+/* 2. CRITICAL FIX: Fix 1000% Image Overflow & Unconstrained Layouts on Legacy Engines */
+img, svg, video, iframe {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+div, section, main, article, footer, header {
+  box-sizing: border-box;
+}
+
+/* 3. Custom Glass & Animation Utilities */
 @layer utilities {
-  /* Dynamic Mesh Gradient Background */
   .bg-mesh-gradient {
     background-color: #020617;
     background-image: 
@@ -21,7 +33,6 @@ html, body {
       radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.15) 0px, transparent 50%);
   }
 
-  /* Frosted Glass Effect */
   .glass-panel {
     background: rgba(15, 23, 42, 0.75);
     backdrop-filter: blur(16px);
@@ -29,7 +40,6 @@ html, body {
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  /* Interactive Glass Hover Card */
   .glass-card {
     background: rgba(15, 23, 42, 0.6);
     backdrop-filter: blur(12px);
@@ -67,12 +77,12 @@ html, body {
   }
 }
 
-/* Fix Unstyled Boxes & Plain HTML Backgrounds on legacy engines */
+/* 4. Fix Unstyled Boxes & Borders on Legacy Engines */
 div, section, main, article, footer, header, form, input, select {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Fallback background fix for product cards and containers */
+/* 5. Fallback Background Fix for Product Cards and Containers */
 .bg-slate-900\/50,
 .bg-slate-900\/80,
 .bg-slate-950,
@@ -86,7 +96,7 @@ div, section, main, article, footer, header, form, input, select {
   background-color: #0f172a !important;
 }
 
-/* Legacy fallback for older WebKit/Chromium engines */
+/* 6. Legacy Fallback for Older WebKit/Chromium Engines */
 @supports not (backdrop-filter: blur(1px)) {
   .backdrop-blur-md,
   .backdrop-blur-xl,
