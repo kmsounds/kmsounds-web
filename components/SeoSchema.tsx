@@ -27,52 +27,40 @@ export default function SeoSchema() {
       "name": "Pro Audio & Stage Equipment Catalog",
       "itemListElement": [
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Custom Speaker Baffles & Cabinets (SRX 715, 718, 725, RCF Bins & Tops)",
-            "description": "Precision-cut custom speaker baffles and full enclosures built with high-grade 18mm Malaysian Plywood according to original specs."
-          }
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Custom Speaker Baffles & Cabinets (SRX 715, 718, 725, RCF Bins & Tops)",
+          "description": "Precision-cut custom speaker baffles and full enclosures built with high-grade 18mm Malaysian Plywood according to original specs."
         },
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Pro Power Amplifiers & Speaker Protection Modules",
-            "description": "High-output power amplifiers, MOSFET modules, sound processing units, and speaker protection systems."
-          }
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pro Power Amplifiers & Speaker Protection Modules",
+          "description": "High-output power amplifiers, MOSFET modules, sound processing units, and speaker protection systems."
         },
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Stage Lighting Stands & T-Bar Mounts",
-            "description": "Heavy-duty stage light stands, T-bar light stands, and lighting rig mounting accessories."
-          }
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Stage Lighting Stands & T-Bar Mounts",
+          "description": "Heavy-duty stage light stands, T-bar light stands, and lighting rig mounting accessories."
         },
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Microphones & Professional Mic Stands",
-            "description": "Vocal and instrument microphones, desktop mic stands, and heavy-duty boom mic stands."
-          }
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Microphones & Professional Mic Stands",
+          "description": "Vocal and instrument microphones, desktop mic stands, and heavy-duty boom mic stands."
         },
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Pro Audio Cables & XLR Connectors",
-            "description": "Balanced XLR microphone cables, heavy-duty speaker cables, audio patch cords, and connectors."
-          }
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Pro Audio Cables & XLR Connectors",
+          "description": "Balanced XLR microphone cables, heavy-duty speaker cables, audio patch cords, and connectors."
         },
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Product",
-            "name": "Active & Passive Audio Crossovers",
-            "description": "Digital audio processors and active/passive frequency crossover systems for live audio setups."
-          }
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Active & Passive Audio Crossovers",
+          "description": "Digital audio processors and active/passive frequency crossover systems for live audio setups."
         }
       ]
     }
