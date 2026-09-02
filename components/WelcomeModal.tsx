@@ -11,13 +11,17 @@ interface WelcomeModalProps {
 export default function WelcomeModal({ isOpen, onClose, userName }: WelcomeModalProps) {
   if (!isOpen) return null;
 
-  const handleClose = () => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("hasSeenWelcome", "true");
+ const handleClose = () => {
+    try {
+      if (typeof window !== "undefined") {
+        localStorage.setItem("hasSeenWelcome", "true");
+      }
+    } catch (e) {
+      console.error(e);
     }
     onClose();
   };
-
+  
   return (
     <div 
       onClick={handleClose}
