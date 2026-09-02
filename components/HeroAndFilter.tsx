@@ -132,6 +132,7 @@ export default function HeroAndFilter({
         <div className="flex-1 min-w-[200px] relative">
           <input
             type="text"
+            aria-label="search products"
             placeholder="Search products (e.g. SRX 715, RCF, Amp)..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -140,6 +141,7 @@ export default function HeroAndFilter({
         </div>
 
         <select
+        aria-label="Filter by brand"
           value={selectedBrand}
           onChange={(e) => setSelectedBrand(e.target.value)}
           className="bg-slate-950/80 border border-slate-800 rounded-xl px-3 py-2.5 text-sm text-slate-300 focus:outline-none focus:border-cyan-500 cursor-pointer"
@@ -157,6 +159,7 @@ export default function HeroAndFilter({
           </span>
           <input
             type="range"
+            aria-label="Filter by maximum price"
             min="5000"
             max="500000"
             step="5000"
