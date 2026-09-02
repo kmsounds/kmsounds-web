@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  transpilePackages: ['@supabase/supabase-js'],
+  transpilePackages: [
+    '@supabase/supabase-js',
+    'lucide-react',
+    'framer-motion',
+    'swiper'
+  ],
   allowedDevOrigins: ["192.168.8.163:3000", "192.168.8.163"],
   images: {
     remotePatterns: [
