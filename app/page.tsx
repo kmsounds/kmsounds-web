@@ -118,7 +118,7 @@ const [isWelcomeOpen, setIsWelcomeOpen] = useState(false);
   const [addedItemAnim, setAddedItemAnim] = useState<number | null>(null);
   const cartRef = useRef<HTMLButtonElement>(null);
 
-  // Safe Filter Logic (Handles Array and String for SubCategory)
+// Safe Filter Logic (Handles Search, Brand, Price and Categories)
   const filteredProducts = products.filter((product: any) => {
     const matchesCategory =
       !activeCategory ||
@@ -134,17 +134,27 @@ const [isWelcomeOpen, setIsWelcomeOpen] = useState(false);
         ? rawSub.includes(activeSubCategory)
         : rawSub === activeSubCategory);
 
+    // 1. Enhanced Search (Searches in Name, Title, Description, Category, and Brand)
+    const searchLower = searchQuery.toLowerCase().trim();
     const matchesSearch =
       !searchQuery ||
-      (product.name || product.title || "")
-        .toLowerCase()
-        .includes(searchQuery.toLowerCase().trim());
+      (product.name || product.title || "").toLowerCase().includes(searchLower) ||
+      (product.description || "").toLowerCase().includes(searchLower) ||
+      (product.category || "").toLowerCase().includes(searchLower) ||
+      (product.brand || "").toLowerCase().includes(searchLower);
+
+    // 2. Flexible Brand Matching (Case-insensitive & Title Fallback)
+    const brandLower = selectedBrand.toLowerCase();
+    const productBrandLower = (product.brand || "").toLowerCase();
+    const productTitleLower = (product.name || product.title || "").toLowerCase();
 
     const matchesBrand =
       !selectedBrand ||
       selectedBrand === "All" ||
-      product.brand === selectedBrand;
+      productBrandLower === brandLower ||
+      productTitleLower.includes(brandLower);
 
+    // 3. Price Filter
     const matchesPrice = !product.price || Number(product.price) <= maxPrice;
 
     return (

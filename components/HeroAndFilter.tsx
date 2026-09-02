@@ -150,7 +150,7 @@ export default function HeroAndFilter({
           <option value="SRX">SRX Series</option>
           <option value="RCF">RCF</option>
           <option value="JBL">JBL</option>
-          <option value="K.M SOUNDS">K.M SOUNDS Original</option>
+          <option value="K.M SOUNDS">K.M SOUNDS Custom Made</option>
         </select>
 
         <div className="flex items-center gap-3 bg-slate-950/80 border border-slate-800 px-4 py-2 rounded-xl">
