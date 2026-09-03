@@ -410,21 +410,43 @@ export default function VenueCalculator() {
                 </div>
               </div>
 
-              <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-xs">
-                <span className="text-slate-400">Ambient Air Temp (°C) for DSP Speed of Sound Math:</span>
-                <div className="flex items-center gap-2">
-                  <input
-                    type="number"
-                    min="15"
-                    max="45"
-                    value={tempC}
-                    onChange={(e) => setTempC(Number(e.target.value))}
-                    className="w-16 p-1 bg-slate-900 border border-slate-700 rounded text-center text-emerald-400 font-bold"
-                  />
-                  <span className="text-slate-500">°C</span>
-                </div>
-              </div>
-            </div>
+            <div className="pt-2 border-t border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+  <span className="text-slate-400">
+    Ambient Air Temp (°C) for DSP Speed of Sound Math:
+  </span>
+  <div className="flex items-center gap-2 self-start sm:self-auto">
+    {/* Minus Button */}
+    <button
+      type="button"
+      onClick={() => setTempC((prev) => Math.max(15, prev - 1))}
+      className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-700 text-emerald-400 font-bold text-lg active:scale-95 transition-all flex items-center justify-center cursor-pointer hover:bg-slate-800"
+    >
+      -
+    </button>
+
+    {/* Input Field */}
+    <input
+      type="number"
+      inputMode="numeric"
+      min="15"
+      max="45"
+      value={tempC}
+      onChange={(e) => setTempC(Number(e.target.value))}
+      className="w-16 h-10 bg-slate-900 border border-slate-700 rounded-xl text-center text-emerald-400 font-bold text-base focus:border-emerald-400 outline-none"
+    />
+
+    {/* Plus Button */}
+    <button
+      type="button"
+      onClick={() => setTempC((prev) => Math.min(45, prev + 1))}
+      className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-700 text-emerald-400 font-bold text-lg active:scale-95 transition-all flex items-center justify-center cursor-pointer hover:bg-slate-800"
+    >
+      +
+    </button>
+    <span className="text-slate-400 font-bold ml-1">°C</span>
+  </div>
+</div>
+</div>
 
             <div className="bg-slate-950/70 p-5 rounded-2xl border border-emerald-500/20">
               <span className="block text-xs font-bold uppercase tracking-wider text-emerald-400 mb-3 flex items-center gap-2">

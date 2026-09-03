@@ -5,6 +5,7 @@ import { categoriesData, categoriesGrid, heroBanners } from "@/data/categoriesDa
 import WelcomeModal from "@/components/WelcomeModal";
 import ContactBanner from "@/components/ContactBanner";
 import CalculatorBanner from "@/components/CalculatorBanner";
+import CableGuideBanner from "@/components/CableGuideBanner";
 // Components Imports
 
 import { supabase } from "@/lib/supabase";
@@ -340,6 +341,8 @@ export default function Home() {
 
       {/* Footer එකට උඩින් Contact Banner එක */}
       <ContactBanner />
+
+      <CableGuideBanner />
 
       <CalculatorBanner />
 
