@@ -242,7 +242,7 @@ export default function AdminPage() {
 
       const updatePayload = {
         name: editFormData.name.trim(),
-        price: Number(editFormData.price),
+        price: Math.round(Number(editFormData.price)),
         category: editFormData.category,
         subCategory: editFormData.subCategory,
         material: editFormData.material,
@@ -464,7 +464,7 @@ Return ONLY a JSON object with keys: "name", "material", "category", "subCategor
         name: name.trim(),
         category: category,
         subCategory: subCategory,
-        price: Number(price),
+        price: Math.round(Number(price)),
         description: desc,
         material: material,
         Warranty: warranty.trim() !== "" ? warranty.trim() : null,

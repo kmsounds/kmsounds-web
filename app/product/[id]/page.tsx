@@ -182,7 +182,7 @@ export default function ProductDetailPage() {
 
   // Handle WhatsApp Direct Inquiry
   const handleWhatsAppInquiry = () => {
-    const formattedPrice = product.price ? Number(product.price).toLocaleString() : "Contact Us";
+ const formattedPrice = product.price ? Math.round(Number(product.price)).toLocaleString() : "Contact Us";
     const msg = `Hello K.M SOUNDS, I am interested in ordering:\n*Product:* ${product.name || ""}\n*Price:* LKR ${formattedPrice}\n*Category:* ${product.category || "Audio Equipment"}`;
     window.open(`https://wa.me/94751513131?text=${encodeURIComponent(msg)}`, '_blank');
   };
@@ -353,9 +353,9 @@ export default function ProductDetailPage() {
             <div className="p-4 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-cyan-500/30 flex items-baseline justify-between shadow-lg">
               <div>
                 <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Price</p>
-                <div className="text-2xl sm:text-3xl font-black text-cyan-400">
-                  LKR {product.price ? Number(product.price).toLocaleString() : "Contact Us"}
-                </div>
+              <div className="text-2xl sm:text-3xl font-black text-cyan-400">
+  LKR {product.price ? Math.round(Number(product.price)).toLocaleString() : "Contact Us"}
+</div>
               </div>
               <span className="text-[11px] text-slate-400 bg-slate-800 px-2.5 py-1 rounded-md border border-slate-700">
                 LKR Price Ex-Factory
