@@ -344,32 +344,72 @@ export default function AdminPage() {
 Extract key technical specifications, dimensions, build details, or features.
 Return ONLY a JSON object with keys: "name", "material", "category", "subCategory", "features" (array of strings).`;
 
-      // 🔄 Next.js Red Screen Crash එක වැළැක්වීමට Gemini Call එක සඳහා පමණක් වෙනම Try-Catch එකක්
-      let rawText = '{}';
-      try {
-        const response = await ai.models.generateContent({
-          model: 'gemini-3.8-flash',
-          contents: [
-            promptText,
-            {
-              inlineData: {
-                mimeType: 'image/jpeg',
-                data: base64Image,
-              },
+     // 🔄 Next.js Red Screen Crash එක වැළැක්වීමට Gemini Call එක සඳහා පමණක් වෙනම Try-Catch එකක්
+let rawText = '{}';
+
+try {
+  const maxAttempts = 3;
+  let response: any = null;
+
+  for (let attempt = 0; attempt < maxAttempts; attempt++) {
+    try {
+      response = await ai.models.generateContent({
+        model: 'gemini-3.8-flash',
+        contents: [
+          promptText,
+          {
+            inlineData: {
+              mimeType: 'image/jpeg',
+              data: base64Image,
             },
-          ],
-          config: {
-            responseMimeType: 'application/json',
           },
-        });
-        rawText = response.text || '{}';
-      } catch (apiErr: any) {
-        console.warn("Gemini API Error / Busy:", apiErr);
-        // 🔔 Red Screen වෙනුවට Soft Notification එකක් පෙන්වීම
-        alert("⚠️ Google Server Busy (503). Photo එක එකතු විය, විස්තර Manually ඇතුළත් කරන්න.");
-        setAnalyzing(false);
-        return; // Analysis එක නවතා Photo එක පමණක් Retain කරයි
+        ],
+        config: {
+          responseMimeType: 'application/json',
+        },
+      });
+
+      // Gemini request එක සාර්ථකයි
+      break;
+
+    } catch (err: any) {
+      const errorMessage = String(err?.message || err);
+
+      const is503 =
+        err?.status === 503 ||
+        err?.statusCode === 503 ||
+        /503|UNAVAILABLE|overload|overloaded|temporarily unavailable/i.test(errorMessage);
+
+      // 503 නොවන error එකක් නම් retry කරන්නේ නැහැ
+      if (!is503 || attempt === maxAttempts - 1) {
+        throw err;
       }
+
+      // 1st retry → 1.5 seconds
+      // 2nd retry → 3 seconds
+      const delay = 1500 * Math.pow(2, attempt);
+
+      console.warn(
+        `Gemini 503. Retry ${attempt + 1}/${maxAttempts - 1} after ${delay}ms`
+      );
+
+      await new Promise(resolve => setTimeout(resolve, delay));
+    }
+  }
+
+  rawText = response?.text || '{}';
+
+} catch (apiErr: any) {
+  console.warn("Gemini API Error / Busy:", apiErr);
+
+  // 🔔 සියලු retries fail වුණාම විතරක් notification එක
+  alert(
+    "⚠️ Google Server Busy (503). Photo එක එකතු විය, විස්තර Manually ඇතුළත් කරන්න."
+  );
+
+  setAnalyzing(false);
+  return; // Analysis එක නවතා Photo එක Retain කරයි
+}
 
       const aiData = JSON.parse(rawText);
 
