@@ -294,13 +294,41 @@ export default function AdminPage() {
     setAnalyzing(true);
 
     try {
-      const arrayBuffer = await primaryFile.arrayBuffer();
-      const bytes = new Uint8Array(arrayBuffer);
-      let binary = '';
-      for (let i = 0; i < bytes.byteLength; i++) {
-        binary += String.fromCharCode(bytes[i]);
-      }
-      const base64Image = typeof window !== 'undefined' ? window.btoa(binary) : Buffer.from(binary, 'binary').toString('base64');
+      // ⚡ Client-side Image Resize Logic (Max 1024px) for Fast AI Processing
+      const base64Image = await new Promise<string>((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          let width = img.width;
+          let height = img.height;
+          const maxDim = 1024;
+
+          if (width > maxDim || height > maxDim) {
+            if (width > height) {
+              height = Math.round((height * maxDim) / width);
+              width = maxDim;
+            } else {
+              width = Math.round((width * maxDim) / height);
+              height = maxDim;
+            }
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext("2d");
+          if (!ctx) {
+            reject(new Error("Canvas context missing"));
+            return;
+          }
+          ctx.drawImage(img, 0, 0, width, height);
+
+          const dataUrl = canvas.toDataURL("image/jpeg", 0.7);
+          const base64Str = dataUrl.split(",")[1];
+          resolve(base64Str);
+        };
+        img.onerror = (err) => reject(err);
+        img.src = URL.createObjectURL(primaryFile);
+      });
 
       const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
       if (!apiKey) {
@@ -325,7 +353,7 @@ Return ONLY a JSON object with keys: "name", "material", "category", "subCategor
             promptText,
             {
               inlineData: {
-                mimeType: primaryFile.type || 'image/jpeg',
+                mimeType: 'image/jpeg',
                 data: base64Image,
               },
             },
