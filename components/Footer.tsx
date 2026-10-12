@@ -24,7 +24,7 @@ export default function Footer({ setActiveCategory }: FooterProps) {
             <ul className="space-y-2 text-xs text-slate-400">
               <li>
                 <Link
-                  href="/category/baffles"
+                  href="/category/Speaker Box"
                   className="hover:text-cyan-400 cursor-pointer block transition-colors"
                 >
                   Speaker Cabinets

@@ -93,7 +93,7 @@ export default function ContactPage() {
             Get In Touch With <span className="text-red-500">K.M SOUNDS</span>
           </h1>
           <p className="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">
-            Speaker Baffles, Custom Cabinets හෝ Pro Audio Equipment පිළිබඳ ඕනෑම විමසීමක් සඳහා අප හා සම්බන්ධ වන්න පහසුවෙන්ම පහල ඇති foam එක පුරවා whatsapp බටන් එක ක්ලික් කරන්න. 
+            Speaker Box, Custom Cabinets හෝ Pro Audio Equipment පිළිබඳ ඕනෑම විමසීමක් සඳහා අප හා සම්බන්ධ වන්න පහසුවෙන්ම පහල ඇති foam එක පුරවා whatsapp බටන් එක ක්ලික් කරන්න. 
           </p>
         </div>
 
@@ -237,7 +237,7 @@ export default function ContactPage() {
                         onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                         className="w-full px-4 py-3 bg-black/90 border border-white/10 rounded-xl focus:outline-none focus:border-red-500 text-sm transition-colors text-gray-200 appearance-none pr-10 cursor-pointer"
                       >
-                        <option value="Speaker Baffle / Cabinet">Speaker Baffle / Cabinet</option>
+                        <option value="Speaker Box/ Cabinet">Speaker Box / Cabinet</option>
                         <option value="Raw Enclosure">Raw Enclosure (Unfinished)</option>
                         <option value="Pro Audio Accessories">Pro Audio Accessories</option>
                         <option value="Repair / Protection Module">Repair / Amp Protection Module</option>

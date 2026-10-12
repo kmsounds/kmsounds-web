@@ -325,8 +325,8 @@ export default function Home() {
         {/* Location / Map Section */}
         <LocationSection />
 
-        {/* Custom Baffle Calculator Section */}
-        <section id="baffle-calculator" className="py-10 px-4 max-w-7xl mx-auto">
+        {/* Custom Speaker Box Calculator Section */}
+        <section id="Speaker Box-calculator" className="py-10 px-4 max-w-7xl mx-auto">
           <CustomOrderCalculator />
         </section>
 

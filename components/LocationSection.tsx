@@ -13,7 +13,7 @@ export default function LocationSection() {
             Visit Our Workshop
           </h2>
           <p className="mt-2 text-slate-400 text-sm sm:text-base">
-            Get your custom speaker baffles & sound equipment directly from Hanwella, Sri Lanka
+            Get your custom speaker Boxes & sound equipment directly from Hanwella, Sri Lanka
           </p>
         </div>
 

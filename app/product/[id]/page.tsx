@@ -156,8 +156,8 @@ export default function ProductDetailPage() {
     };
   }, [isCalcOpen]);
 
-  // Keyword check for Baffle / Cabinet products only (Array / String support)
-  const allowedKeywords = ["rcf", "jbl", "srx", "top", "bin", "monitor", "buffel", "baffle", "cabinets", "box", "subwoofer"];
+  // Keyword check for Speaker Box / Cabinet products only (Array / String support)
+  const allowedKeywords = ["rcf", "jbl", "srx", "top", "bin", "monitor", "buffel", "Speaker Box", "cabinets", "box", "subwoofer"];
   
   const subCatText = Array.isArray(product?.subCategory) 
     ? product.subCategory.join(" ") 
@@ -165,7 +165,7 @@ export default function ProductDetailPage() {
     ? product.sub_category.join(" ") 
     : product?.subCategory || product?.sub_category || "";
 
-  const isBaffleProduct = allowedKeywords.some((key) =>
+  const isSpeakerBoxProduct = allowedKeywords.some((key) =>
     `${product?.category || ""} ${subCatText} ${product?.name || ""}`
       .toLowerCase()
       .includes(key)
@@ -388,7 +388,7 @@ export default function ProductDetailPage() {
               {/* 🚀 Venue Setup Calculator Button */}
               <ProductCalculatorButton />
 
-              {isBaffleProduct && (
+              {isSpeakerBoxProduct && (
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -488,7 +488,7 @@ export default function ProductDetailPage() {
                 <div className="flex items-center gap-2 overflow-hidden">
                   <span className="p-1 bg-cyan-950 text-cyan-400 rounded text-xs sm:text-sm shrink-0">🧮</span>
                   <h3 className="text-xs sm:text-base font-black text-cyan-400 uppercase tracking-wider truncate">
-                    K.M SOUNDS Baffle Calculator - <span className="text-white font-bold">{product.name}</span>
+                    K.M SOUNDS Speaker Box Calculator - <span className="text-white font-bold">{product.name}</span>
                   </h3>
                 </div>
                 <button

@@ -12,7 +12,7 @@ export default function AdminPage() {
   const [products, setProducts] = useState<any[]>([]);
   const [productId, setProductId] = useState("");
   const [name, setName] = useState("");
-  const [category, setCategory] = useState("Baffles");
+  const [category, setCategory] = useState("Speaker Box");
   const [subCategory, setSubCategory] = useState<string[]>([]); // 🔄 Changed to Array
   const [price, setPrice] = useState("");
   const [desc, setDesc] = useState("");
@@ -199,7 +199,7 @@ export default function AdminPage() {
     setEditFormData({
       name: product.name || "",
       price: product.price || 0,
-      category: product.category || "Baffles",
+      category: product.category || "Speaker Box",
       subCategory: currentSubCats,
       material: product.material || "",
       description: product.description || "",

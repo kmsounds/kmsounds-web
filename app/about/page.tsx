@@ -3,7 +3,7 @@ import { ShieldCheck, Cpu, Box, Phone, Mail, Globe, Sparkles, CheckCircle2, Volu
 
 export const metadata = {
   title: "About Us | K.M SOUNDS",
-  description: "Feel The Power Hear The Quality - Professional Speaker Baffles & Audio Equipment Manufacturing in Sri Lanka.",
+  description: "Feel The Power Hear The Quality - Professional Speaker Box & Audio Equipment Manufacturing in Sri Lanka.",
 };
 
 export default function AboutPage() {
@@ -35,7 +35,7 @@ export default function AboutPage() {
           </div>
 
           <p className="max-w-3xl mx-auto text-neutral-300 text-base sm:text-lg leading-relaxed font-light">
-            K.M SOUNDS ආරම්භයේ සිටම අපගේ ප්‍රධාන අරමුණ වූයේ Live Audio Rental සහ High-output Sound Systems සඳහා උපරිම ශ්‍රව්‍ය කාර්යක්ෂමතාවයක් ලබා දෙන Professional Speaker Baffles නිෂ්පාදනය කිරීමයි.
+            K.M SOUNDS ආරම්භයේ සිටම අපගේ ප්‍රධාන අරමුණ වූයේ Live Audio Rental සහ High-output Sound Systems සඳහා උපරිම ශ්‍රව්‍ය කාර්යක්ෂමතාවයක් ලබා දෙන Professional Speaker Box නිෂ්පාදනය කිරීමයි.
           </p>
         </section>
 
@@ -62,7 +62,7 @@ export default function AboutPage() {
               <h2 className="text-2xl font-bold text-white tracking-wide">Our Mission</h2>
             </div>
             <p className="text-neutral-300 text-sm sm:text-base leading-relaxed font-normal">
-              From day one, K.M SOUNDS has been committed to manufacturing high-grade Speaker Baffles tailored specifically for Live Audio Rental companies and High-output Sound Systems. Our mission is to deliver acoustic excellence by strictly adhering to original factory dimensions and exact acoustic tuning.
+              From day one, K.M SOUNDS has been committed to manufacturing high-grade Speaker Box tailored specifically for Live Audio Rental companies and High-output Sound Systems. Our mission is to deliver acoustic excellence by strictly adhering to original factory dimensions and exact acoustic tuning.
             </p>
           </div>
         </section>
@@ -199,7 +199,7 @@ export default function AboutPage() {
 
           <h2 className="text-3xl font-black text-white">අපව සම්බන්ධ කරගන්න (Contact Us)</h2>
           <p className="text-neutral-300 max-w-xl mx-auto text-sm sm:text-base">
-            ඔබගේ Sound System එකට අවශ්‍ය සියලුම Baffles සහ Sound Setup Custom Order කරගැනීමට දැන්ම අප හා සම්බන්ධ වන්න.
+            ඔබගේ Sound System එකට අවශ්‍ය සියලුම Speaker Box සහ Sound Setup Custom Order කරගැනීමට දැන්ම අප හා සම්බන්ධ වන්න.
           </p>
 
           <div className="flex flex-wrap justify-center items-center gap-6 pt-2 text-sm sm:text-base font-medium">
@@ -216,7 +216,7 @@ export default function AboutPage() {
 
           <div className="pt-4">
             <a
-              href="https://wa.me/94751513131?text=Hello%20K.M%20SOUNDS,%20I%20want%20to%20inquire%20about%20Speaker%20Baffles."
+              href="https://wa.me/94751513131?text=Hello%20K.M%20SOUNDS,%20I%20want%20to%20inquire%20about%20Speaker%20Box."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold px-8 py-4 rounded-full text-base transition-all duration-300 shadow-[0_0_25px_rgba(16,185,129,0.4)] hover:shadow-[0_0_35px_rgba(16,185,129,0.6)] hover:scale-105"

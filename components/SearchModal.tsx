@@ -203,10 +203,10 @@ export default function SearchModal({
               <div className="flex flex-wrap gap-2">
                 {[
                   "SRX 715",
-                  "PM 2602",
-                  "18inch Baffles",
+                  "Amplifires",
+                  "18inch Speaker Box ",
                   "XLR Cables",
-                  "Class D Amps",
+                  "Light Stands",
                 ].map((tag) => (
                   <button
                     key={tag}

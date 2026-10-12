@@ -429,10 +429,10 @@ export default function CustomOrderCalculator({ isOpen = true }: CustomOrderCalc
       <div className="mb-6 border-b border-slate-800 pb-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold mb-2">
           <Sparkles className="w-3.5 h-3.5" />
-          INSTANT BAFFLE CALCULATOR
+          INSTANT SPEAKER BOX CALCULATOR
         </div>
         <h2 className="text-2xl sm:text-3xl font-black tracking-wide text-white">
-          K.M SOUNDS Baffle Calculator
+          K.M SOUNDS Speaker Box Calculator
         </h2>
         <p className="text-xs sm:text-sm text-slate-400 mt-1">
           බෆල් ජෝඩුවට (Pair 2) අදාළ Category එක, Setup එක සහ Customization තෝරා ක්ෂණික ගණන බලාගන්න.
@@ -624,7 +624,7 @@ export default function CustomOrderCalculator({ isOpen = true }: CustomOrderCalc
           {/* Price & Order Action */}
           <div className="mt-6 pt-4 border-t border-slate-700">
             <span className="text-[10px] font-bold uppercase text-slate-400 block">
-              TOTAL ESTIMATED PRICE (1 PAIR / 2 BAFFLES)
+              TOTAL ESTIMATED PRICE (1 PAIR / 2 BOXES)
             </span>
             <div className="text-3xl sm:text-4xl font-black text-cyan-400 my-1">
               LKR {calculatedPrice.toLocaleString()}

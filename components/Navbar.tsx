@@ -167,7 +167,7 @@ export default function Navbar({
               Feel the Power Hear The Quality
             </span>
             <span className="text-slate-600">•</span>
-            <span>🔊 1 Year Replacement Warranty for All Baffle Boxes!</span>
+            <span>🔊 1 Year Replacement Warranty for All Speaker Boxes!</span>
             <span className="text-slate-600">•</span>
             <span>💥 Special Discounts on Bulk Light Stands Orders!</span>
             <span className="text-slate-600">•</span>
@@ -189,7 +189,7 @@ export default function Navbar({
               Feel the Power Hear The Quality
             </span>
             <span className="text-slate-600">•</span>
-            <span>🔊 1 Year Replacement Warranty for All Baffle Boxes!</span>
+            <span>🔊 1 Year Replacement Warranty for All Speaker Boxes!</span>
             <span className="text-slate-600">•</span>
             <span>💥 Special Discounts on Bulk Light Stands Orders!</span>
             <span className="text-slate-600">•</span>

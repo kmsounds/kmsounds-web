@@ -11,7 +11,7 @@ export default function SeoSchema() {
     ],
     "image": "https://kmsounds.com/og-image.jpg",
     "description":
-      "Leading Sri Lankan manufacturer and supplier of pro audio equipment, custom speaker baffles (SRX 715, 718, 725 & RCF Bins/Tops crafted with 18mm Malaysian Plywood), power amplifiers, crossovers, studio microphones, XLR cables, light stands, T-bar stands, and stage accessories in Hanwella.",
+      "Leading Sri Lankan manufacturer and supplier of pro audio equipment, custom speaker Box (SRX 715, 718, 725 & RCF Bins/Tops crafted with 18mm Malaysian Plywood), power amplifiers, crossovers, studio microphones, XLR cables, light stands, T-bar stands, and stage accessories in Hanwella.",
     "url": "https://kmsounds.com",
     "priceRange": "LKR",
     "address": {
@@ -21,7 +21,7 @@ export default function SeoSchema() {
       "addressCountry": "LK"
     },
     "slogan": "Feel the Power, Hear The Quality",
-    "keywords": "Speaker Baffles Sri Lanka, SRX 718 Box Price, RCF Speaker Bins, 18mm Malaysian Plywood Speaker Boxes, Power Amplifiers Sri Lanka, Light Stands, T-Bar Light Stand, Mic Stands, Studio Microphones, XLR Cables Sri Lanka, Audio Connectors, Subwoofer Enclosures, Stage Lighting Accessories, DJ Sound Systems Hanwella",
+    "keywords": "Speaker Box Sri Lanka, SRX 718 Box Price, RCF Speaker Bins, 18mm Malaysian Plywood Speaker Boxes, Power Amplifiers Sri Lanka, Light Stands, T-Bar Light Stand, Mic Stands, Studio Microphones, XLR Cables Sri Lanka, Audio Connectors, Subwoofer Enclosures, Stage Lighting Accessories, DJ Sound Systems Hanwella",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Pro Audio & Stage Equipment Catalog",
@@ -29,8 +29,8 @@ export default function SeoSchema() {
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Custom Speaker Baffles & Cabinets (SRX 715, 718, 725, RCF Bins & Tops)",
-          "description": "Precision-cut custom speaker baffles and full enclosures built with high-grade 18mm Malaysian Plywood according to original specs."
+          "name": "Custom Speaker Box & Cabinets (SRX 715, 718, 725, RCF Bins & Tops)",
+          "description": "Precision-cut custom speaker Box and full enclosures built with high-grade 18mm Malaysian Plywood according to original specs."
         },
         {
           "@type": "ListItem",

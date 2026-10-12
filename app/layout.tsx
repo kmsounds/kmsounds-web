@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   
 manifest: "/manifest.json",
  
-  description: "K.M SOUNDS Hanwella - Premier manufacturer and supplier of Pro Audio Equipment in Sri Lanka. SRX & RCF Baffles, Subwoofer Bins, Tops, Amplifiers, Mixers, DJ Lights, Stands, Mic & Pro Cables.",
+  description: "K.M SOUNDS Hanwella - Premier manufacturer and supplier of Pro Audio Equipment in Sri Lanka. SRX & RCF Box, Subwoofer Bins, Tops, Amplifiers, Mixers, DJ Lights, Stands, Mic & Pro Cables.",
   keywords: [
     
     // Brand & Location
@@ -28,9 +28,9 @@ manifest: "/manifest.json",
     "DJ Store Sri Lanka",
     "Pro Audio Sri Lanka",
 
-    // Speaker Baffles & Cabinets
+    // Speaker Box & Cabinets
     "Speaker Cabinets",
-    "Speaker Baffles Sri Lanka",
+    "Speaker Speaker Box Sri Lanka",
     "Buffel",
     "Bin",
     "Top",
@@ -40,7 +40,7 @@ manifest: "/manifest.json",
     "SRX 715",
     "SRX 718",
     "SRX 725",
-    "RCF Baffle",
+    "RCF Speaker Box",
 
     // Speaker Sizes & Component Brands
     "18 inch speaker model",
@@ -84,7 +84,7 @@ manifest: "/manifest.json",
   authors: [{ name: "K.M SOUNDS" }],
   openGraph: {
     title: "K.M SOUNDS Hanwella | Feel the Power Hear The Quality",
-    description: "High-Performance Speaker Baffles, RCF Bins & Tops, Power Amps, DJ Equipment & Pro Audio Accessories in Sri Lanka.",
+    description: "High-Performance Speaker Box , RCF Bins & Tops, Power Amps, DJ Equipment & Pro Audio Accessories in Sri Lanka.",
     url: "https://kmsounds.com",
     siteName: "K.M SOUNDS",
     images: [
@@ -101,7 +101,7 @@ manifest: "/manifest.json",
   twitter: {
     card: "summary_large_image",
     title: "K.M SOUNDS HANWELLA | PRO AUDIO SOLUTIONS",
-    description: "High-Performance Speaker Baffles, RCF Bins & Tops, Power Amps, DJ Equipment & Pro Audio Accessories in Sri Lanka.",
+    description: "High-Performance Speaker Box , RCF Bins & Tops, Power Amps, DJ Equipment & Pro Audio Accessories in Sri Lanka.",
     images: ["https://kmsounds.com/og-main/og-main.jpeg"],
   },
   robots: {

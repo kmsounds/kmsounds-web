@@ -32,7 +32,7 @@ export const heroBanners = [
     desc: "18mm Malaysian Plywood Precision Cut Sound Boxes",
     tag: "HOT DEAL",
     image: "/banners/banner1.webp",
-    link: "/category/Baffles", 
+    link: "/category/Speaker Box", 
   },
   {
     id: 2,
