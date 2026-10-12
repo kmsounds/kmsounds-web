@@ -18,7 +18,7 @@ export const categoriesData: { [key: string]: string[] } = {
 };
 
 export const categoriesGrid = [
-  { title: "Speaker Baffles", count: "View Collection", icon: "🔊", cat: "Baffles" },
+  { title: "Speaker Baffles", count: "View Collection", icon: "🔊", cat: "Boxes" },
   { title: "Power Amplifiers", count: "View Collection", icon: "⚡", cat: "Amplifiers" },
   { title: "Cables", count: "View Collection", icon: "🔌", cat: "Cables" },
   { title: "Amplifier Racks", count: "View Collection", icon: "🧰", cat: "Amp rack" },
