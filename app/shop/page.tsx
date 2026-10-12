@@ -7,7 +7,7 @@ import { Suspense, useState, useEffect } from "react";
 import { getProducts } from "@/data/products";
 
 const categoryTitles: Record<string, string> = {
- Speaker Box: "Speaker Box & Cabinets",
+ "Speaker Box": "Speaker Box & Cabinets",
   amplifiers: "Power Amplifiers",
   cables: "Pro Cables & Wire",
   accessories: "Amplifire Racks",
@@ -33,7 +33,7 @@ function ShopContent() {
 
   // Supabase Database Category Matching Mapping
   const dbCategoryMap: Record<string, string[]> = {
-   Speaker Box: ["speakers", "Box"],
+   "Speaker Box": ["speakers", "Box"],
     amplifiers: ["amplifiers", "power amps"],
     cables: ["cables"],
     accessories: ["amp rack", "accessories", "light stands", "lights", "others"]
