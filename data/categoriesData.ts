@@ -1,5 +1,5 @@
 export const categoriesData: { [key: string]: string[] } = {
-  "Baffles": ["Bin", "Top", "Monitors", "Line Array", "SRX", "RCF", "Normal", "Others"],
+  "Speaker Box": ["Bin", "Top", "Monitors", "Line Array", "SRX", "RCF", "Normal", "Others"],
   "Speakers": ["8inch", "10inch", "12inch", "15inch", "18inch"],
   "Components & Drivers": ["HF Drivers", "Tweeters", "Diaphragms", "Recone Kits", "Network Boards"],
   "Cabinet Hardware": ["Handles", "Corners", "Castor Wheels", "Speaker Grilles", "Rubber Feet", "Pole Mounts" , "Back Plates" , "T Nuts", "Filter Net", "Logo Badge"],
